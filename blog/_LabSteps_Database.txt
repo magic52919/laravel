@@ -28,7 +28,7 @@ Lab: Laravel 資料庫程式設計
 
 
 1.7 閱讀下列參考資料，
-    https://laravel.tw/docs/5.2/controllers#restful-resource-controllers
+    https://laravel.tw/docs/5.2/controller  s#restful-resource-controllers
 
     <Note>
     請務必看過「由資源控制器處理的行為」這節的表格
@@ -95,9 +95,12 @@ DB::table('employees')->insert(['firstName' => 'Lionel', 'lastName' => 'Messi', 
 DB::table('employees')->insert(['firstName' => 'test', 'lastName' => 'test', 'created_at' => new Datetime, 'updated_at' => new Datetime ])
 
 DB::table('employees')->get();
+DB::table('employees')->orderby('lastName','desc')->get();
 DB::table('employees')->find(1)
 DB::table('employees')->where('lastName', 'test')->first()
+DB::table('employees')->whereBetween('id', [2,3])->get()
 DB::table('employees')->where('lastName', 'test')->delete()
+
 
 App\Employee::all();
 App\Employee::find(1);
@@ -123,7 +126,8 @@ Route::resource('employees', 'EmployeesController');
 
 3.2 編輯 app\Http\Controllers\EmployeesController.php
     參用 Employee 類別，也就是:
-
+    終端機
+php artisan make:controller EmployeesController --resource
     use App\Employee;
 
 
