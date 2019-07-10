@@ -14,9 +14,9 @@ class PlacardController extends Controller
     public function index()
     {
         $placardList = log::orderby("updated_at","desc")->limit(3)->get();
-        $placardList[0]->values = substr($placardList[0]->value,0,3)."....";
-        $placardList[1]->values = substr($placardList[1]->value,0,3)."....";
-        $placardList[2]->values = substr($placardList[2]->value,0,3)."....";
+        $placardList[0]->values = substr($placardList[0]->value,0,6)."....";
+        $placardList[1]->values = substr($placardList[1]->value,0,6)."....";
+        $placardList[2]->values = substr($placardList[2]->value,0,6)."....";
         return view('home.index', compact('placardList'));
     }
 
@@ -103,5 +103,9 @@ class PlacardController extends Controller
         $emp = log::find($id);
         $emp->delete();
         return redirect("/placard");
+    }
+    function content($id){
+        $emp = log::find($id);
+        return view('placard.content', compact('emp'));
     }
 }
