@@ -11,10 +11,10 @@
     <td align="center" bgcolor="#CCCCCC"><font color="#FFFFFF">會員系統 - 首頁</font></td>
   </tr>
   <tr>
-      @if ($name !='')
-      <td align="center" valign="baseline"><a href="/member/login">登入</a> | <a href="secret.php">會員專用頁</a></td>
+      @if ($name == 'guest') 
+      <td align="center" valign="baseline"><a href="/member/login">登入</a> | <a href="/home/member">會員專用頁</a></td>
       @else
-      <td align="center" valign="baseline"><a href="/member/login">登入</a> | <a href="secret.php">會員專用頁</a></td>
+      <td align="center" valign="baseline"><a href="/member/logout">登出</a> | <a href="/home/member">會員專用頁</a></td>
       @endif
     
   </tr>
