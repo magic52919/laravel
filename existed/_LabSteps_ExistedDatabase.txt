@@ -144,11 +144,9 @@ class Department extends Model
 
 
     <Note> 請研究一下:
-    1. 如何指定Model存取哪一個資料表? protected $table = "departments";
-    2. 如何指定哪一個欄位是 primary key? protected $primaryKey = 'departmentId';
-    3. 程式如何設定「部門-員工」之間的一對多關聯關係 function employees() {
-        return $this->hasMany(Employee::class, 'departmentId');
-        }
+    1. 如何指定Model存取哪一個資料表?
+    2. 如何指定哪一個欄位是 primary key?
+    3. 程式如何設定「部門-員工」之間的一對多關聯關係
 
 
 
