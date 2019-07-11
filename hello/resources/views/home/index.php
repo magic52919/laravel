@@ -22,7 +22,7 @@
     <div id="app1">
             <!-- v-model 雙向 -->
         <input v-model="message"><br>
-        <span v-if="seen">@{{ message }}</span><br>
+        <span v-if="seen">{{ message }}</span><br>
         <button v-on:click="reverseMessage">Reverse Message</button>
     </div>
     <div id="app2">
@@ -36,7 +36,7 @@
     <div id="app4">
         <ul>
             <li v-for="(todoItem,index) in todoList">
-                @{{  todoItem.text }}
+                {{  todoItem.text }}
             </li>
         </ul>
     </div>
