@@ -13,3 +13,5 @@
 
 Route::get('/', "PlacardController@index");
 Route::resource('placard', 'PlacardController');
+
+Route::get('/placard/{id}/content', "PlacardController@content");

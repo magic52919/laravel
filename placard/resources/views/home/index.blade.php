@@ -25,7 +25,7 @@
 @foreach ($placardList as $val)
 <tr>
         <td>{{$val->id}}</td>
-        <td>{{$val->values}}</td>
+        <td><a href="/placard/{{$val->id}}/content">{{$val->values}}</a></td>
         <td>{{$val->updated_at}}</td>
         <td>
             <span class="pull-right">
